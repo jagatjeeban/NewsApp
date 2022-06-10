@@ -1,11 +1,13 @@
 package com.example.newsapp.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.example.newsapp.R
+import com.example.newsapp.models.Article
 import com.example.newsapp.ui.MainActivity
 import com.example.newsapp.ui.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -31,5 +33,18 @@ class ArticleFragment: Fragment(R.layout.fragment_article) {
             fab.hide()
             Snackbar.make(view, "Article saved successfully", Snackbar.LENGTH_SHORT).show()
         }
+
+        //shares an article
+        share.setOnClickListener {
+            shareArticle(article)
+        }
+    }
+
+    private fun shareArticle(article: Article){
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, "Hey! Check out this article: ${article.url}")
+        val chooser = Intent(Intent.createChooser(intent , "Share this article using.."))
+        startActivity(chooser)
     }
 }
