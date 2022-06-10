@@ -1,5 +1,5 @@
 # NewsApp
-An android application that lets users view and scroll through the latest breaking news in India. Users can save any particular news for future reference and search for news worldwide.
+An android application that lets users view and scroll through the latest breaking news in India. Users can share articles to friends and save any article for future reference and also can search for news worldwide.
 ## Tech Stacks Used
 - Retrofit2 library
 - Room library
