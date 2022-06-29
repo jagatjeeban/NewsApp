@@ -13,6 +13,7 @@ import com.example.newsapp.adapters.NewsAdapter
 import com.example.newsapp.ui.MainActivity
 import com.example.newsapp.ui.NewsViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_article.*
 import kotlinx.android.synthetic.main.fragment_saved_news.*
 
 class SavedNewsFragment: Fragment(R.layout.fragment_saved_news) {

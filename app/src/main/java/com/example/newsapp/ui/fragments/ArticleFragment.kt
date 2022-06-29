@@ -42,7 +42,7 @@ class ArticleFragment: androidx.fragment.app.Fragment(R.layout.fragment_article)
     private fun shareArticle(article: Article){
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT, "Hey! Check out this article: ${article.url}")
+        intent.putExtra(Intent.EXTRA_TEXT, "Hey! Check out this news article: ${article.url}")
         val chooser = Intent(Intent.createChooser(intent , "Share this news using.."))
         startActivity(chooser)
     }
