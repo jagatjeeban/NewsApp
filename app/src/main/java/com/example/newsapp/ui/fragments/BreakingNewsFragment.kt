@@ -9,6 +9,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import com.example.newsapp.R
 import com.example.newsapp.adapters.NewsAdapter
 import com.example.newsapp.ui.MainActivity
@@ -64,6 +66,14 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
                 }
             }
         })
+        refreshPage()
+    }
+
+    private fun refreshPage(){
+        swipeContainer.setOnRefreshListener {
+            Toast.makeText(context, "Page refreshed!", Toast.LENGTH_SHORT).show()
+            swipeContainer.isRefreshing = false
+        }
     }
 
     private fun showProgressBar() {

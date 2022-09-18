@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_round_home"/>
     <item
         android:id="@+id/savedNewsFragment"
-        android:title="@string/favourites"
+        android:title="Saved"
         android:icon="@drawable/ic_favourite"/>
     <item
         android:id="@+id/searchNewsFragment"
